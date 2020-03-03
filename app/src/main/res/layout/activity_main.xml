@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,59 +7,81 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/numOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="First Number"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/numTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Second Number"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numOne" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Addition"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/subButton"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/subButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtraction"
+        app:layout_constraintBaseline_toBaselineOf="@id/addButton"
+        app:layout_constraintLeft_toRightOf="@id/addButton"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/hiButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Say Hi!"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/androidButton"
+        android:id="@+id/mulButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android"
-        android:layout_margin="16dp"
+        android:layout_marginTop="110dp"
+        android:text="Multiply"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hiButton" />
+        app:layout_constraintRight_toLeftOf="@id/divButton"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/helloButton"
+        android:id="@+id/divButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        app:layout_constraintLeft_toRightOf="@+id/androidButton"
-        app:layout_constraintBottom_toBottomOf="@+id/androidButton" />
-
-
-    <!--    app:layout_constraintHorizontal_bias="0.8"-->
-    <!--    app:layout_constraintVertical_bias="0.7"-->
-    <Button
-        android:id="@+id/buttonCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/helloButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Division"
+        app:layout_constraintBaseline_toBaselineOf="@id/mulButton"
+        app:layout_constraintLeft_toRightOf="@id/mulButton"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/textViewOne"
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="one"
-        app:layout_constraintCircle="@+id/buttonCenter"
-        app:layout_constraintCircleRadius="100dp"
-        app:layout_constraintCircleAngle="10"
-        tools:ignore="MissingConstraints" />
+        android:text="0"
+        android:textSize="70sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mulButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
